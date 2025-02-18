@@ -1,10 +1,13 @@
 package com.agiota.luckynumberpicker
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +19,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    fun drawingNumbers(view: View){
+        val textResult = findViewById<TextView>(R.id.text_result)
+        val number = Random().nextInt(11)
+        textResult.setText("Número Sorteador: $number")
     }
 }
